@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grid Default</title>
+
+  <style>
+
+    /* ==============
+     = GRID SYSTEM =
+    WIEDERVERWENDBAR 
+    ============== */
+
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: inherit;
+    }
+
+    html {
+      font-size: 62.5%; /* 10px = 1 rem */
+    }
+
+    body {
+      box-sizing: border-box;
+      font-size: 1.6rem;
+    }
+
+    .fullwidth {
+      width: 100%;
+    }
+
+    .container {
+      width: 95%; /* EINSTELLUNG: PX EM REM % VW */
+      margin: 0 auto;
+    }
+
+    .row::after {
+      content: "";
+      clear: both;
+      display: block;
+    }
+
+    /* GLOBALER SELEKTOR */
+
+    [class*='col-'] {
+      float: left;
+      padding: 1rem; /* INNENABSTAND ALLER COLUMS */
+    }
+
+    /* GLOBALER SELEKTOR ENDE */
+
+    .col-1 { width: 16.666%; }
+    .col-2 { width: 33.333%; }
+    .col-3 { width: 50%; }
+    .col-4 { width: 25%; }
+    .col-6 { width: 100%; }
+
+    /* BREAKPOINTS  | MEDIA QUERIES*/
+    /* 1rem = 1em = 16px | Berechnung: BREAKPOINT / 16 (PX=REM)*/
+    /* Unter 84em = 1344px (schmalere Desktops) */
+    @media (max-width: 84em) {
+
+    }
+
+    /* Unter 75em = 1200px (Landscape Desktops) */
+    @media (max-width: 84em) {
+    }
+    
+    /* Unter 59em = 944px (Tablets) */
+    @media (max-width: 59em) {
+      .col-1 { width: 33.333%; }
+      .col-2 { width: 100%; }
+      .col-3 { width: 100%; }
+      .col-4 { width: 100%; }
+    }
+    
+    /* Unter 44em = 704px (schmalere Tablets) */
+    @media (max-width: 44em) {
+      .col-1 { width: 50%; }
+      .col-2 { width: 100%; }
+      .col-3 { width: 100%; }
+      .col-4 { width: 100%; }
+    }
+
+    /* Unter 34em = 544px (Smartphones) */
+    @media (max-width: 34em) {
+      .col-1 { width: 100%; }
+      .col-2 { width: 100%; }
+      .col-3 { width: 100%; }
+      .col-4 { width: 100%; }
+    }
+
+    /* ========================================
+    SICHTBARKEIT - AUSKOMMENTIEREN ODER LÖSCHEN
+    =========================================== */
+    .border, .border * {
+      border: 1px solid #eee;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="fullwidth border"></div>
+  <div class="container border">
+    <div class="row">
+      <div class="col-1"></div>
+      <div class="col-1"></div>
+      <div class="col-1"></div>
+      <div class="col-1"></div>
+      <div class="col-1"></div>
+      <div class="col-1"></div>
+    </div>
+    <div class="row">
+      <div class="col-2"></div>
+      <div class="col-2"></div>
+      <div class="col-2"></div>
+    </div>
+    <div class="row">
+      <div class="col-3"></div>
+      <div class="col-3"></div>
+    </div>
+    <div class="row">
+      <div class="col-4"></div>
+      <div class="col-4"></div>
+      <div class="col-4"></div>
+      <div class="col-4"></div>
+    </div>
+    <div class="row">
+      <div class="col-6"></div>
+    </div>
+  </div>
+  
+</body>
+</html>
